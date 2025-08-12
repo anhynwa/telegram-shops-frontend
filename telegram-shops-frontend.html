@@ -1,12 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Telegram Shop</title>
-  </head>
-  <body>
-    <h1>Chào mừng đến shop trong Telegram!</h1>
-    <p>Trang web này mở trực tiếp từ server Node.js.</p>
-  </body>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Telegram Shop</title>
+</head>
+<body>
+  <h1>Welcome to Telegram Shop</h1>
+  <button id="callShop">📞 Gọi Shop</button>
+  <button id="callShipper">🚚 Gọi Shipper</button>
+
+  <script>
+    // Gọi API backend (server.js)
+    document.getElementById("callShop").addEventListener("click", () => {
+      fetch("https://YOUR_NGROK_URL/call-shop") // thay bằng URL thật
+        .then(res => res.text())
+        .then(data => alert(data))
+        .catch(err => alert("Lỗi: " + err));
+    });
+
+    document.getElementById("callShipper").addEventListener("click", () => {
+      fetch("https://YOUR_NGROK_URL/call-shipper") // thay bằng URL thật
+        .then(res => res.text())
+        .then(data => alert(data))
+        .catch(err => alert("Lỗi: " + err));
+    });
+  </script>
+</body>
 </html>
+
